@@ -1,5 +1,7 @@
 # Simulator
 
+❤️ Support my work https://gum.co/SixPL ❤️
+
 ![](Screenshots/simulator.png)
 
 ## Export
