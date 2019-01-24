@@ -27,7 +27,7 @@ struct Menu {
     let item = NSMenuItem()
     item.title = device.name
     item.isEnabled = device.isAvailable
-    item.state = device.isOpen ? 1 : 0
+    item.state = NSControl.StateValue(device.isOpen ? 1 : 0)
     item.onStateImage = NSImage(named: "on")
     item.offStateImage = NSImage(named: "off")
 

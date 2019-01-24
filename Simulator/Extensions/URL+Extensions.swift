@@ -5,7 +5,7 @@ extension URL {
   var removeTrailingSlash: URL {
     guard absoluteString.hasSuffix("/") else { return self }
 
-    let string = absoluteString.substring(to: absoluteString.characters.index(before: absoluteString.endIndex))
-    return URL(string: string)!
+    let string = absoluteString[absoluteString.startIndex..<absoluteString.endIndex]
+    return URL(string: String(string))!
   }
 }
