@@ -47,9 +47,10 @@ class Device {
     let string = Task.output(launchPath: "/usr/bin/xcrun", arguments: ["simctl", "list", "-j", "devices"],
                              directoryPath: Path.devices)
 
-    guard let data = string.data(using: String.Encoding.utf8),
-      let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary,
-      let json = jsonObject
+    guard
+      let data = string.data(using: String.Encoding.utf8),
+      let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+      let json = jsonObject as? JSONDictionary
       else { return [] }
 
     return parse(json)
