@@ -30,14 +30,14 @@ class Device {
   }
 
   var os: OS {
-    return OS(rawValue: osInfo.components(separatedBy: " ").first ?? "") ?? .unknown
+    return OS(rawValue: osInfo.components(separatedBy: "-").first ?? "") ?? .unknown
   }
 
   var version: String {
     return osInfo.components(separatedBy: " ").last ?? ""
   }
 
-  var hasContent: Bool {
+  var hasApplications: Bool {
     return !applications.isEmpty
   }
 
@@ -67,7 +67,7 @@ class Device {
     }
 
     return devices.filter {
-      return $0.hasContent && $0.isAvailable && $0.os != .unknown
+      return $0.hasApplications && $0.isAvailable && $0.os != .unknown
     }.sorted {
       return $0.osInfo.compare($1.osInfo) == .orderedAscending
     }
