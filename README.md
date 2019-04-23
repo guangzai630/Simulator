@@ -2,7 +2,7 @@
 
 ❤️ Support my work https://gum.co/SixPL ❤️
 
-![](Screenshots/simulator.png)
+![](Screenshots/s2.png)
 
 ## Export
 
